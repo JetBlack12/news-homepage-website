@@ -1,0 +1,32 @@
+---
+import logo from "../../public/logo.svg"
+import { Image } from '@astrojs/image/components';
+
+const links = [
+  {
+    content:"Home",
+  },
+  {
+    content:"New",
+  },
+  {
+    content:"Popular",
+  },
+  {
+    content:"Trending",
+  },
+  {
+    content:"Categories",
+  }
+]
+---
+
+<nav class="flex justify-between">
+  <Image src={logo} class="self-center cursor-pointer" alt=""/>
+  <ul class="flex gap-[2rem] items-center content-center">
+    {links.map((link) => {
+     return <li class="cursor-pointer text-darkGreyBlue font-InterRegular text-[15.5px] tracking-[0.7px] hover:text-softRed">{link.content}</li>
+    })}
+  </ul>
+</nav>
+  

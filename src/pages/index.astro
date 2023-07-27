@@ -1,4 +1,8 @@
 ---
+import Navbar from "../../src/components/Navbar.astro"
+import Main from "../../src/components/Main.astro"
+import Footer from "../../src/components/Footer.astro"
+import "../styles/global.css"
 ---
 
 <html lang="en">
@@ -7,9 +11,11 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>News Homepage</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-offWhite  px-[20rem] pt-[2rem]">
+		<Navbar/>
+		<Main/>
+		<Footer/>
 	</body>
 </html>

@@ -1,0 +1,65 @@
+---
+import { Image } from '@astrojs/image/components';
+import Imagey from "../../public/image-web-3-desktop.jpg";
+const contents = [
+  {
+    classH1:"font-InterBold text-[22px] mb-[0.7rem] hover:text-softOrange cursor-pointer",
+    h1: "Hydrogen VS Electric Cars",
+    classP:"font-InterRegular text-[17px] w-[21rem] mb-[1.5rem] text-greyBlue",
+    p:"Will hydrogen-fueled cars ever catch up to EVs?"
+  },
+  {
+    classH1:"font-InterBold text-[22px] mb-[0.7rem] mt-[1.5rem] hover:text-softOrange cursor-pointer",
+    h1: "The Downsides of AI Artistry",
+    classP:"font-InterRegular text-[17px] w-[21rem] mb-[1.5rem] text-greyBlue",
+    p:"What are the possible adverse effects of on-demand AI image generation?"
+  }
+]
+const contents2 = [
+  {
+    classH1:"font-InterBold text-[22px] mb-[0.7rem] mt-[1.5rem] hover:text-softOrange cursor-pointer",
+    h1: "Is VC Funding Drying Up?",
+    classP:"font-InterRegular text-[17px] w-[21rem] text-greyBlue",
+    p:"Private funding by VC firms is down 50% YOY. We take a look at what the means."
+  }
+]
+---
+
+<main class="mt-[3rem]">
+  <header>
+    <Image src={Imagey} alt='' width={800}/>
+    <section class="grid grid-cols-2 mt-[0.5rem]">
+      <h1 class="text-[50px] leading-[3.5rem] mt-[0.75rem] font-InterExtraBold w-[17rem] text-veryDarkBlue">
+        The Bright Future of Web 3.0?
+      </h1>
+      <div class="mt-[0.75rem] ml-[-2rem]">
+        <p class="text-darkGreyBlue font-InterRegular text-[17px] w-[25rem]">
+          We dive into the next evolution of the web that claims to put the power of the platforms back into the hand of the people.
+          But is it really fulfilling it's promise?
+        </p>
+        <button class="hover:bg-veryDarkBlue text-[14px] bg-softRed text-offWhite h-[3rem] w-[11rem] font-InterRegular tracking-[2px] uppercase mt-[2rem]">
+          Read more
+        </button>
+      </div>
+    </section>
+  </header>
+  <section class="bg-veryDarkBlue p-[2rem] text-offWhite">
+    <h1 class="text-[40px] font-InterBold text-softOrange mb-[1.5rem]">New</h1>
+    {contents.map((content) => {
+      return <h1 class={content.classH1}>{content.h1}</h1>
+      <p class={content.classP}>{content.p}</p>
+      <div class="bg-darkGreyBlue w-[100%] h-[1px]"></div>
+    })}
+    {contents2.map((content)=> {
+      return <h1 class={content.classH1}>{content.h1}</h1>
+      <p class={content.classP}>{content.p}</p>
+    })}
+  </section>
+</main>
+
+<style>
+  main{
+    display: grid;
+    grid-template-columns: 1fr 430px;
+  }
+</style>

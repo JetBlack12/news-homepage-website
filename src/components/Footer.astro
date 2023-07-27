@@ -1,0 +1,45 @@
+---
+import PC from "../../public/image-retro-pcs.jpg"
+import KBM from "../../public/image-top-laptops.jpg"
+import Controller from "../../public/image-gaming-growth.jpg"
+import { Image } from "@astrojs/image/components";
+const contents = [
+  {
+    img:PC,
+    h1:"01",
+    p: "Reviving Retro PCs",
+    p2:"What happens when old PCs are given modern upgrades?"
+  },
+  {
+    img:KBM,
+    h1: "02",
+    p: "Top 10 Laptops of 2022",
+    p2:"Our best picks for various needs and budgets."
+  },
+  {
+    img:Controller,
+    h1: "03",
+    p: "The Growth of Gaming",
+    p2:"How the pandemic has sparked fresh opportunites."
+  },
+]
+---
+
+<section class="flex mt-[4rem]">
+  {contents.map((content) => {
+    return <article class="flex content-center pr-[2rem]">
+      <Image src={content.img} alt="" height={150}/>
+      <div class="ml-[1.5rem]">
+        <h1 class="text-[40px] font-InterBold text-greyBlue">
+          {content.h1}
+        </h1>
+        <p class="text-[20px] font-InterExtraBold text-veryDarkBlue mb-[0.5rem] hover:text-softRed  cursor-pointer">
+          {content.p}
+        </p>
+        <p class="text-[16px] font-InterRegular text-darkGreyBlue w-[15rem]">
+          {content.p2}
+        </p>
+      </div>
+    </article>
+  })}
+</section>
